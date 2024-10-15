@@ -13,6 +13,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import chatMessages from '@/components/chat/chatMessages.vue'
+import chatMessages from '@/components/chat/ChatMessages.vue'
 import MessageBox from '@/components/chat/MessageBox.vue'
 </script>
