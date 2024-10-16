@@ -12,6 +12,7 @@
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 interface Props {
   message: string
