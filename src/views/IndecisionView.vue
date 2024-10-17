@@ -9,9 +9,11 @@
     <chatMessages :messages="messages" />
 
     <!--Message Box-->
-    <MessageBox />
+    <MessageBox @send-message="onMessage" />
+    <!-- <MessageBox @sendMessage="onMessage($event)" /> Esta es otra forma de utilizar los eventos-->
   </div>
 </template>
+
 <script setup lang="ts">
 import chatMessages from '@/components/chat/ChatMessages.vue'
 import MessageBox from '@/components/chat/MessageBox.vue'
@@ -36,4 +38,12 @@ const messages = ref<ChatMessage[]>([
     image: 'https://yesno.wtf/assets/no/9-dc99c0e3c066b28d3a12262692cd5432.gif'
   }
 ])
+
+const onMessage = (text: string) => {
+  messages.value.push({
+    id: new Date().getTime(),
+    itsMine: true,
+    message: text
+  })
+}
 </script>
