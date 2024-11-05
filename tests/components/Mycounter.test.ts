@@ -6,10 +6,29 @@ describe('<My counter/> ', () => {
   test('should match snapshot', () => {
     const wrapper = mount(MyCounter, {
       props: {
-        value: 5
+        value: 10
       }
     })
 
-    console.log(wrapper.html())
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  test('renders the counter value correctly', () => {
+    const value = 10
+    const wrapper = mount(MyCounter, {
+      props: {
+        value: value
+      }
+    })
+
+    expect(wrapper.find('h3').text()).toContain(`Counter : ${value}`)
+    expect(wrapper.find('[data-testid="square-label"]').text()).toContain(
+      `Square : ${value * value}`
+    )
+
+    const [counterLabel, squareLabel] = wrapper.findAll('h3')
+
+    expect(counterLabel.text()).toContain(`Counter : ${value}`)
+    expect(squareLabel.text()).toContain(`Square : ${value * value}`)
   })
 })
