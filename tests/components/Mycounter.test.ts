@@ -62,6 +62,7 @@ describe('<My counter/> ', () => {
     const [, btnDecrement] = wrapper.findAll('button')
 
     await btnDecrement.trigger('click')
+    await btnDecrement.trigger('click')
 
     expect(counterLabel.text()).toContain(`Counter : ${value - 2}`)
     expect(squareLabel.text()).toContain(`Square : ${(value - 2) * (value - 2)}`)
