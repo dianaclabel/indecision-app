@@ -1,4 +1,4 @@
-import { test, describe } from 'vitest'
+import { test, describe, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import MyCounter from '../../src/components/MyCounter.vue'
 

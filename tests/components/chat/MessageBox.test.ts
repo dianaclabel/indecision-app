@@ -1,5 +1,6 @@
 import MessageBox from '@/components/chat/MessageBox.vue'
 import { mount } from '@vue/test-utils'
+import { describe, expect, test } from 'vitest'
 
 describe('<MessageBox/>', () => {
   const wrapper = mount(MessageBox)
