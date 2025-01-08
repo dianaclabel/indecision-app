@@ -19,12 +19,12 @@ interface Props {
   messages: ChatMessage[]
 }
 
-const messagesComplete = defineProps<Props>()
+const props = defineProps<Props>()
 
 const chatRef = ref<HTMLDivElement | null>(null)
 
-watch(messagesComplete.messages, () => {
-  console.log(messagesComplete.messages.length)
+watch(props, () => {
+  // console.log(messagesComplete.messages.length)
   console.log(chatRef.value?.scrollHeight)
 
   setTimeout(() => {
